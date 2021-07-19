@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.example.employeelist.data.Employee" />
+
+        <variable
+            name="employee"
+            type="Employee" />
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:layout_marginTop="3dp"
+        app:cardElevation="3dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/employee_image"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:contentDescription="@string/avatar"
+                android:padding="3dp"
+                android:src="@color/black"
+                app:load="@{employee.avatar_url}" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/employee_name"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/employee_image"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:text="@{`NAME :` + employee.name}"
+                android:textSize="17sp"
+                tools:text="dolor est" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/employee_surname"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/employee_name"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="3dp"
+                android:text="@{`SURNAME :` + employee.surname}"
+                android:textSize="17sp"
+                tools:text="lorem ipsum" />
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

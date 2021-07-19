@@ -7,7 +7,7 @@ import com.example.employeelist.data.Employee
 import com.example.employeelist.remote.EmployeeInterface
 import java.lang.Exception
 
-class EmployeePaging(val employeeInterface: EmployeeInterface) : PagingSource<Int, Employee>(){
+class EmployeePaging(val s: String, val employeeInterface: EmployeeInterface) : PagingSource<Int, Employee>(){
     override fun getRefreshKey(state: PagingState<Int, Employee>): Int? {
         //if it is not null
         return state.anchorPosition?.let {
